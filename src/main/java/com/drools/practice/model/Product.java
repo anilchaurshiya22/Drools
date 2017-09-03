@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.drools.model;
+package com.drools.practice.model;
 
 /**
  * @author anilc
