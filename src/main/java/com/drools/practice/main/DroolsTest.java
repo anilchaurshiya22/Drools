@@ -34,6 +34,7 @@ public class DroolsTest {
 					"The discount for the jewellery product " + product.getType() + " is " + product.getDiscount());
 
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
