@@ -1,4 +1,4 @@
-package com.rule
+package rules
 
 import com.drools.practice.model.Product
 
