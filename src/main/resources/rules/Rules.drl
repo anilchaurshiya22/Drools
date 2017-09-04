@@ -1,0 +1,38 @@
+package rules
+
+import com.drools.practice.model.Product
+
+
+rule "offer for Diamond"
+	when 
+		productObject: Product(type=="diamond")
+	then 
+		productObject.setDiscount(15);
+	end
+
+	rule "offer for gold"
+salience 2
+	when
+		productObject: Product(type=="gold")
+	then 
+		productObject.setDiscount(productObject.getDiscount() + 5);
+	end
+	
+	rule "Offer for Gold on Festival"
+salience 3
+	when 
+		productObject: Product(type=="gold") && Product(event=="sale")
+	then
+		productObject.setDiscount(productObject.getDiscount() + 5);
+		System.out.println("Offer for Gold on Festival");
+	end
+	
+	rule "if customer is platinum"
+salience 1
+no-loop true
+	when 
+		productObject: Product(buyer == "platinum")
+	then
+		System.out.println("This is platinum customer double the discount");
+		update(productObject)
+	end	
