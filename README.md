@@ -1,2 +1,1 @@
-This is simple Drools Application using drools compiler
-It is very helpful for the drools beginner.
+This is simple drools application using spring boot and drools decision table
